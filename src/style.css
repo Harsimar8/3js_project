@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #111111;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#threejs-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Sits underneath the user layout view */
+}
+
+/* UI Informational Layer Wrapper box */
+.ui-overlay {
+  position: absolute; 
+  top: 20px; 
+  left: 20px; 
+  color: white; 
+  font-family: sans-serif; 
+  pointer-events: none; /* Crucial: Clicks go straight through to the 3D meshes behind it */
+  z-index: 10; 
+  background: rgba(0, 0, 0, 0.65); 
+  padding: 20px; 
+  border-radius: 12px;
+  max-width: 350px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ui-overlay h1 {
+  margin: 0 0 10px 0; 
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.ui-overlay p {
+  margin: 6px 0; 
+  font-size: 13px; 
+  line-height: 1.4; 
+  opacity: 0.85;
+}
